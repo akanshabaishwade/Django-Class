@@ -1,14 +1,28 @@
 '''
+Create a virtual environment:
+- Windows: python -m venv venvname
+- Ubuntu: python3 -m venv venvname
 
-create venv = python -m venv venv
-activate the environment =
-windows - venvname\Scripts\activate.bat
-ubuntu - source venvname/bin/activate
+Activate the environment:
+- Windows: venvname\Scripts\activate.bat
+- Ubuntu: source venvname/bin/activate
 
-install - pip install django
-py --version
-django-admin --version
-django-admin startproject projectname
-python manage.py runserver
-open - http://127.0.0.1:8000/
+Install Django:
+- pip install django
+
+Check Python version:
+- py --version
+
+Check Django version:
+- django-admin --version
+
+Create a new Django project:
+- django-admin startproject projectname
+
+Run the development server:
+- python manage.py runserver
+
+Open the project in a web browser:
+- http://127.0.0.1:8000/
+
 '''
