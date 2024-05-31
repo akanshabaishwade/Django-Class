@@ -19,6 +19,10 @@ Check Django version:
 Create a new Django project:
 - django-admin startproject projectname
 
+Create a new Django App:
+- django-admin startapp appname
+
+
 Run the development server:
 - python manage.py runserver
 
