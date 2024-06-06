@@ -8,11 +8,15 @@ class Student(models.Model):
     age = models.IntegerField() #123
     date_of_birth = models.DateField()
 
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
 
 class ModelName(models.Model): #id
     field1 = models.CharField(max_length=100)
     field2 = models.CharField(max_length=50, blank=True, null=True, help_text="enter name of field")
 
+    def __str__(self):
+        return self.field1
 
 class AllFieldType(models.Model):
     # AutoField: It automatically increments.
