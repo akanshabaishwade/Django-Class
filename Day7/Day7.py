@@ -65,6 +65,10 @@ student_alice.age = 21
 student_alice.save()
 print("Updated student:", Student.objects.get(first_name='Alice'))
 
+# Update using QuerySet's update method
+Student.objects.filter(first_name='Alice').update(age=21)
+print("Updated student:", Student.objects.get(first_name='Alice'))
+
 # Deleting a record
 student_alice.delete()
 print("All students after deletion:", Student.objects.all())
