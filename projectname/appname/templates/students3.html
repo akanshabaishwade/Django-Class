@@ -22,6 +22,7 @@
             <td>{{ student.age }}</td>
             <td>{{ student.date_of_birth }}</td>
             <td>
+                <a href="{% url 'update_student' student.id %}">Update</a>
                 <a href="{% url 'delete_student' student.id %}">Delete</a>
             </td>
         </tr>

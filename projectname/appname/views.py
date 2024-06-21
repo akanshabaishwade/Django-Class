@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .forms import StudentForm
+from .models import Student
+# from appname.models import *
 
 
 
@@ -13,7 +15,6 @@ def home2(request):
     return render(request, 'index.html', context)
 
 
-from .models import Student
 
 def get_students(request):
     students = Student.objects.all()
@@ -37,3 +38,16 @@ def delete_student(request, student_id):
         student.delete()
         return redirect('get_students')
     return render(request, 'confirm_delete.html', {'student': student})
+
+
+
+def update_student(request, pk):
+    student = get_object_or_404(Student, pk=pk)
+    if request.method == 'POST':
+        form = StudentForm(request.POST, instance=student)
+        if form.is_valid():
+            form.save()
+            return redirect('get_students')
+    else:
+        form = StudentForm(instance=student)
+    return render(request, 'update_student.html', {'form': form})
