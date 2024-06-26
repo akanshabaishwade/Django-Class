@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Author, Publisher, Book, Reader, Reading
+from .models import Author, Publisher, Book, Reader, Reading, BookReader
 
 
 @admin.register(Author)
@@ -28,4 +28,8 @@ class ReadingAdmin(admin.ModelAdmin):
     list_display = ('reader', 'book', 'date_started', 'date_finished')
     list_filter = ('date_started', 'date_finished')
     search_fields = ('reader__name', 'book__title')
+    
+    
+admin.site.register(BookReader)
+
 

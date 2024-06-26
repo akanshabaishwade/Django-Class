@@ -35,3 +35,12 @@ class Reading(models.Model):
 
     def __str__(self):
         return f"{self.reader.name} is reading {self.book.title}"
+
+
+class BookReader(models.Model):
+    title = models.CharField(max_length=200)
+    readers = models.ManyToManyField(Reader)
+
+
+    def __str__(self):
+        return self.title
